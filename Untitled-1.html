@@ -1,0 +1,7 @@
+var queryUrl="https://sandbox-api.brewerydb.com/v2/search?q" +userInput+"&api_key=d9247efee8d00ba770bf4713620c9fe9"
+$.ajax({
+url: queryURL,
+method: "GET"
+}).then(function (response) {
+console.log(response)
+})
