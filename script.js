@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    function searchCocktail(userInput) {
+    function searchCocktail(searchParameter) {
         let settings = {
             "async": true,
             "crossDomain": true,
@@ -11,18 +11,36 @@ $(document).ready(function () {
             }
         }
         $.ajax(settings).done(function (response) {
+
             for (let i = 0; i < response.drinks.length; i++) {
                 if (response.drinks[i].strDrink.toLowerCase().includes(searchParameter.toLowerCase())) {
-                    console.log(response.drinks[i].idDrink)
-                    console.log(response.drinks[i].strDrink)
-                }
-                else {
+                    settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
+                        + response.drinks[i].idDrink;
+                    $.ajax(settings).done(function (response) {
+                        console.log(response)
+                        for (let i in response.drinks[0]) {
+                            if (response.drinks[0][i] !== null) {
+                                var ingredients = response.drinks[0][i];
+                                console.log(ingredients)
+                                $("#drinkInfo").append(ingredients);
 
+                            }
+                        }
+
+                    })
                 }
             }
 
+
+            //     }
         })
     }
-    $(document).on("click", "#")
+
+    $(document).on("click", "#srchBtn", function () {
+        event.preventDefault();
+        var searchParameter = $("#search").val().trim();
+        searchCocktail(searchParameter);
+        $("#search").val("");
+    })
 })
 
