@@ -13,8 +13,9 @@ $(document).ready(function () {
         $.ajax(settings).done(function (response) {
             for (let i = 0; i < response.drinks.length; i++) {
                 if (response.drinks[i].strDrink.toLowerCase().includes(searchParameter.toLowerCase())) {
-                    console.log(response.drinks[i].idDrink)
+                    console.log()
                     console.log(response.drinks[i].strDrink)
+                    var drink = response.drinks[i].idDrink;
                 }
                 else {
 
@@ -23,6 +24,9 @@ $(document).ready(function () {
 
         })
     }
-    $(document).on("click", "#")
+    $(document).on("click", "#", function () {
+        var searchParameter = $("#").val().trim();
+        searchCocktail(searchParameter);
+    })
 })
 
