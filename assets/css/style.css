@@ -1,0 +1,38 @@
+body {
+    background-image: url("../images/cocktail.jpg");
+}
+.form-inline {
+    width: 35vw;
+    margin-left: 65vw;
+    background-color: rgb(238, 110, 115);
+}
+#searchBtn {
+    margin-left: 20vw;
+    margin-top: 0;
+    background-color: rgb(238, 110, 115);
+
+}
+.container {
+    padding-top: 15vw;
+    background-color: #d2d3d3bb;
+    margin: 20px; 
+}
+@media screen and (max-width: 768px) {
+    
+    img {
+        width: 200px;
+        height: 200px;
+        
+    }
+  }    
+  
+  /* Additional Screen Sizes */
+  
+  /* Width at 640px and below */
+  @media screen and (max-width: 640px) {
+  
+    img {
+        width: 150px;
+        height: 150px;
+    }
+  }
