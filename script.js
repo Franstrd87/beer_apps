@@ -37,8 +37,16 @@ $(document).ready(function () {
                         }
                     })
                 }
-                else {
-
+                else if (response.drinks[i].strDrink.toLowerCase().includes(searchParameter.toLowerCase()) == false) {
+                    $("#drinkInfo").empty();
+                    console.log("works")
+                    var errorCard = $("<div>")
+                        .addClass("col-12")
+                        .html(newError);
+                    var newError = $("<div>")
+                        .addClass("card")
+                        .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
+                    $("#drinkInfo").append(errorCard);
                 }
             }
         })
