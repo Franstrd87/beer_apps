@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
@@ -21,20 +23,11 @@
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Bartender's Friend</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="">Liquors</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact</a></li>
-                <li>
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <button class="label-icon" id="srchBtn" for="search"><i
-                                    class="material-icons">Search</i></button>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
             </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="searchBtn" class="btn btn-inline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
     <div class="container" id="drinkInfo">
