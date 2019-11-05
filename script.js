@@ -18,7 +18,8 @@ $(document).ready(function () {
                         + response.drinks[i].idDrink;
                     var newDiv = $("<div>")
                         .addClass("card");
-                    $(newDiv).append("<div class='card-image'> <img src=" + response.drinks[i].strDrinkThumb
+                    $(newDiv).append("<div class='card-image'> <img src=" +
+                        response.drinks[i].strDrinkThumb
                         + "></div>",
                         "<div class='card-content' id='drinkRecipe'>");
                     var newCard = $("<div>")
