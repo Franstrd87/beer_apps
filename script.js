@@ -18,7 +18,7 @@ $(document).ready(function () {
                         + response.drinks[i].idDrink;
                     var newDiv = $("<div>")
                         .addClass("card");
-                    $(newDiv).append("<div class='card-image'> <img src=" +
+                    $(newDiv).append("<div class='card-image drinkImg'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + "></div>",
                         "<div class='card-content' id='drinkRecipe'>");
@@ -72,14 +72,36 @@ $(document).ready(function () {
             }
         };
         $.ajax(settings).done(function (response) {
-            for (let k = 0; k < 4; k++) {
+            var firstRow = $("<div>")
+                .attr({
+                    "class": "row",
+                    "id": "firstRow"
+                });
+            for (let k = 0; k < 2; k++) {
                 var randNum = Math.floor((Math.random() * 100) + 1);
                 console.log(response.drinks[randNum])
-                var randomCard = $("<div>")
-                    .addClass("card")
-                    .append("<div class='card-image drinkImg col s6'><img src='" + response.drinks[randNum].strDrinkThumb + "'></div>");
-                $("#drinkInfo").append(randomCard);
+                var randomCard1 = $("<div>")
+                    .addClass("card col-6")
+                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                        + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+                firstRow.append(randomCard1);
             }
+            var secondRow = $("<div>")
+                .attr({
+                    "class": "row",
+                    "id": "secondRow"
+                });
+            for (let k = 0; k < 2; k++) {
+                var randNum = Math.floor((Math.random() * 100) + 1);
+                console.log(response.drinks[randNum])
+                var randomCard2 = $("<div>")
+                    .addClass("card col-6")
+                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                        + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+                secondRow.append(randomCard2);
+            }
+            console.log(firstRow)
+            $("#drinkInfo").append(firstRow, secondRow);
         })
     }
     randomDrinkGenerator();
