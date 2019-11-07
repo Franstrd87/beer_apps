@@ -12,13 +12,16 @@ body {
     background-color: rgb(238, 110, 115);
 
 }
+
 .drinkImg{
     max-width:100%;
 }
+
 .container {
     padding-top: 15vw;
     background-color: #d2d3d3bb;
     margin: 20px; 
+    
 }
 @media screen and (max-width: 768px) {
     

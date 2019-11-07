@@ -72,6 +72,7 @@ $(document).ready(function () {
             }
         };
         $.ajax(settings).done(function (response) {
+
             var firstRow = $("<div>")
                 .attr({
                     "class": "row",
@@ -85,6 +86,7 @@ $(document).ready(function () {
                     .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
                 firstRow.append(randomCard1);
+
             }
             var secondRow = $("<div>")
                 .attr({
