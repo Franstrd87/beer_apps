@@ -1,10 +1,13 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
+<<<<<<< HEAD
 .form-inline {
     width: 35vw;
     background-color: rgb(238, 110, 115);
 }
+=======
+>>>>>>> 2a98e9f649948ca967f6de9c7feb386fc6c24758
 
 #searchBtn {
     margin-left: 20vw;
@@ -19,9 +22,15 @@ body {
 .drinkImg{
     max-width:100%;
 }
-
+.card-title{
+    text-align: center;
+}
 .container {
+<<<<<<< HEAD
     padding-top: 2vw;
+=======
+    padding-top: 3vw;
+>>>>>>> 2a98e9f649948ca967f6de9c7feb386fc6c24758
     background-color: #d2d3d3bb;
     margin: 20px; 
     
