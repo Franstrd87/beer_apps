@@ -18,7 +18,7 @@ $(document).ready(function () {
                         + response.drinks[i].idDrink;
                     var newDiv = $("<div>")
                         .addClass("card");
-                    $(newDiv).append("<div class='card-image drinkImg'> <img src=" +
+                    $(newDiv).append("<div class='card-image  drinkImg'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + "></div>",
                         "<div class='card-content' id='drinkRecipe'>");
@@ -72,9 +72,10 @@ $(document).ready(function () {
             }
         };
         $.ajax(settings).done(function (response) {
+
             var firstRow = $("<div>")
                 .attr({
-                    "class": "row",
+                    "class": "row ",
                     "id": "firstRow"
                 });
             for (let k = 0; k < 2; k++) {
@@ -82,9 +83,10 @@ $(document).ready(function () {
                 console.log(response.drinks[randNum])
                 var randomCard1 = $("<div>")
                     .addClass("card col-6")
-                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                    .append("<div class='card-image hinge delay-3s'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
                 firstRow.append(randomCard1);
+
             }
             var secondRow = $("<div>")
                 .attr({
@@ -96,7 +98,7 @@ $(document).ready(function () {
                 console.log(response.drinks[randNum])
                 var randomCard2 = $("<div>")
                     .addClass("card col-6")
-                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                    .append("<div class='card-image hinge delay-3s'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
                 secondRow.append(randomCard2);
             }

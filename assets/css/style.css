@@ -3,9 +3,9 @@ body {
 }
 .form-inline {
     width: 35vw;
-    margin-left: 65vw;
     background-color: rgb(238, 110, 115);
 }
+
 #searchBtn {
     margin-left: 20vw;
     margin-top: 0;
@@ -15,13 +15,16 @@ body {
     
  
 }
+
 .drinkImg{
     max-width:100%;
 }
+
 .container {
     padding-top: 2vw;
     background-color: #d2d3d3bb;
     margin: 20px; 
+    
 }
 @media screen and (max-width: 768px) {
     
