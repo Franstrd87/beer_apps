@@ -10,10 +10,10 @@ $(document).ready(function () {
                 "x-rapidapi-key": "85567027edmsh326c4363be56f0bp123f0bjsn555442865117"
             }
         };
-        $("#drinkInfo").empty();
+
         $.ajax(settings).done(function (response) {
             for (let i = 0; i < response.drinks.length; i++) {
-                if (response.drinks[i].strDrink.toLowerCase().includes(searchParameter.toLowerCase())) {
+                if (response.drinks[i].strDrink.toLowerCase() == searchParameter.toLowerCase()) {
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
                     var newDiv = $("<div>")
@@ -25,37 +25,63 @@ $(document).ready(function () {
                     var newCard = $("<div>")
                         .addClass("col-12")
                         .html(newDiv);
-                    $("#drinkInfo").append(newCard);
+                    $("#drinkInfo").html(newCard);
                     $.ajax(settings).done(function (response) {
                         console.log(response)
+                        var nameDrink = $("<h1>" + response.drinks[0].strDrink + "<h1>");
+                        $("#drinkRecipe").append(nameDrink);
                         for (let i in response.drinks[0]) {
-                            if (response.drinks[0][i] !== null) {
+                            var arrIrrelevant = ['dateModified', 'idDrink', 'strAlcoholic', 'strDrink', 'strIBA', 'strCategory', 'strCreativeCommonsConfirmed', 'strDrinkThumb', 'strInstructionsDE', 'strTags'];
+                            if (arrIrrelevant.indexOf(i) == -1 && response.drinks[0][i] !== null) {
                                 var ingredients = $("<li>" + response.drinks[0][i] + "</li>");
                                 $("#drinkRecipe").append(ingredients);
-                                console.log(ingredients)
                             }
                         }
                     })
+                    break;
                 }
-                else if (response.drinks[i].strDrink.toLowerCase().includes(searchParameter.toLowerCase()) == false) {
-                    $("#drinkInfo").empty();
-                    console.log("works")
+                else if (response.drinks[i].strDrink.toLowerCase() !== searchParameter.toLowerCase()) {
+                    console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
                         .addClass("col-12")
                         .html(newError);
                     var newError = $("<div>")
                         .addClass("card")
                         .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
-                    $("#drinkInfo").append(errorCard);
+                    $("#drinkInfo").html(errorCard);
                 }
             }
         })
     }
-    $(document).on("click", "#srchBtn", function () {
+    $(document).on("click", "#searchBtn", function (event) {
         event.preventDefault();
+        $("#drinkInfo").empty();
         var searchParameter = $("#search").val().trim();
         searchCocktail(searchParameter);
         $("#search").val("");
     })
+    function randomDrinkGenerator() {
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://the-cocktail-db.p.rapidapi.com/filter.php?c=Cocktail",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+                "x-rapidapi-key": "85567027edmsh326c4363be56f0bp123f0bjsn555442865117"
+            }
+        };
+        $.ajax(settings).done(function (response) {
+            for (let k = 0; k < 4; k++) {
+                var randNum = Math.floor((Math.random() * 100) + 1);
+                console.log(response.drinks[randNum])
+                var randomCard = $("<div>")
+                    .addClass("card")
+                    .append("<div class='card-image drinkImg col s6'><img src='" + response.drinks[randNum].strDrinkThumb + "'></div>");
+                $("#drinkInfo").append(randomCard);
+            }
+        })
+    }
+    randomDrinkGenerator();
 })
 
