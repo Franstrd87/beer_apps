@@ -16,15 +16,18 @@ $(document).ready(function () {
                 if (response.drinks[i].strDrink.toLowerCase() == searchParameter.toLowerCase()) {
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
-                    var newDiv = $("<div>")
-                        .addClass("card");
-                    $(newDiv).append("<div class='card-image drinkImg'> <img src=" +
+                    var newDiv1 = $("<div>")
+                        .addClass("col-6")
+                        .append("<div class='card'>");
+                    newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
-                        + "></div>",
-                        "<div class='card-content' id='drinkRecipe'>");
+                        + " class='drinkImg'></div>");
+                    var newDiv2 = $("<div>")
+                        .addClass("col-6")
+                        .append("<div class='card'><div class='card-text' id='drinkRecipe'>");
                     var newCard = $("<div>")
-                        .addClass("col-12")
-                        .html(newDiv);
+                        .addClass("row")
+                        .append(newDiv1, newDiv2);
                     $("#drinkInfo").html(newCard);
                     $.ajax(settings).done(function (response) {
                         console.log(response)
@@ -84,7 +87,7 @@ $(document).ready(function () {
                 var randomCard1 = $("<div>")
                     .addClass("card col-6")
                     .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
-                        + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+                        + "' class='drinkImg'><p class='drinkName'>" + response.drinks[randNum].strDrink + "</p></div>");
                 firstRow.append(randomCard1);
 
             }
@@ -99,7 +102,7 @@ $(document).ready(function () {
                 var randomCard2 = $("<div>")
                     .addClass("card col-6")
                     .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
-                        + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+                        + "' class='drinkImg'><p class='drinkName'>" + response.drinks[randNum].strDrink + "</p></div>");
                 secondRow.append(randomCard2);
             }
             console.log(firstRow)
