@@ -12,9 +12,9 @@ body {
     background-color: rgb(238, 110, 115);
 
 }
-.card {
-    width: 300px;
-    height: 300px;
+
+.drinkImg{
+    max-width:100%;
 }
 
 .container {
