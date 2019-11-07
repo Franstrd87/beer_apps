@@ -72,13 +72,16 @@ $(document).ready(function () {
             }
         };
         $.ajax(settings).done(function (response) {
+            $('#randomImages').empty();
             for (let k = 0; k < 4; k++) {
                 var randNum = Math.floor((Math.random() * 100) + 1);
                 console.log(response.drinks[randNum])
+                var columnDiv = $("<div class='col-6'>")
                 var randomCard = $("<div>")
                     .addClass("card")
                     .append("<div class='card-image drinkImg col s6'><img src='" + response.drinks[randNum].strDrinkThumb + "'></div>");
-                $("#drinkInfo").append(randomCard);
+columnDiv.append(randomCard);
+                $("#randomImages").append(columnDiv);
             }
         })
     }
