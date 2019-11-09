@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    function giphyApi() {
+        let giphy = $(this).attr("id");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=cocktail&limit=4&offset=0&rating=G&lang=en";
+        console.log(giphy);
+        $("#giphy").empty()
+
     
     function searchGiphy(){
     let giphy = $(this).attr("id");
@@ -24,7 +31,15 @@ $(document).ready(function () {
         })
 
 
-        function searchCocktail(searchParameter) {
+        $ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+        });
+    }
+
+    function searchCocktail(searchParameter) {
         let settings = {
             "async": true,
             "crossDomain": true,
@@ -42,28 +57,48 @@ $(document).ready(function () {
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
                     var newDiv1 = $("<div>")
-                        .addClass("col-6")
+                        .addClass("col-5")
                         .append("<div class='card'>");
                     newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + " class='drinkImg'></div>");
+                    var newTable = $("<table>")
+                        .addClass("table")
+                        .append("<tbody><tr id='liquids'></tr><tr id='measurements'></tr><tbody>");
                     var newDiv2 = $("<div>")
-                        .addClass("col-6")
-                        .append("<div class='card'><div class='card-text' id='drinkRecipe'>");
+                        .addClass("col-7")
+                        .append(newTable);
                     var newCard = $("<div>")
                         .addClass("row")
                         .append(newDiv1, newDiv2);
-                    $("#drinkInfo").html(newCard);
+                    var drinkName = $("<div>")
+                        .addClass("row")
+                        .append("<div class='col-12' id='drinkName'>");
+                    $("#drinkInfo").append(drinkName, newCard);
                     $.ajax(settings).done(function (response) {
                         console.log(response)
-                        var nameDrink = $("<h1>" + response.drinks[0].strDrink + "<h1>");
-                        $("#drinkRecipe").append(nameDrink);
+                        var nameDrink = $("<h1>" + response.drinks[0].strDrink + "</h1>");
+                        $("#drinkName").html(nameDrink);
+                        var instructions = $("<li>" + response.drinks[0].strInstructions + "</li>");
+                        console.log(response.drinks[0].strInstructions)
+                        newDiv2.append(instructions);
+                        var fullRecipe = [];
                         for (let i in response.drinks[0]) {
                             var arrIrrelevant = ['dateModified', 'idDrink', 'strAlcoholic', 'strDrink', 'strIBA', 'strCategory', 'strCreativeCommonsConfirmed', 'strDrinkThumb', 'strInstructionsDE', 'strTags'];
                             if (arrIrrelevant.indexOf(i) == -1 && response.drinks[0][i] !== null) {
-                                var ingredients = $("<li>" + response.drinks[0][i] + "</li>");
-                                $("#drinkRecipe").append(ingredients);
+                                fullRecipe.push(response.drinks[0][i]);
                             }
+                        }
+                        fullRecipe = fullRecipe.splice(2);
+                        console.log(fullRecipe)
+                        for (let m = 0; m < (fullRecipe.length / 2); m++) {
+                            var ingredients1 = $("<td>" + fullRecipe[m] + "</td>");
+                            $("#liquids").append(ingredients1);
+                            console.log(ingredients1)
+                        }
+                        for (let m = (fullRecipe.length / 2); m < fullRecipe.length; m++) {
+                            var ingredients2 = $("<td>" + fullRecipe[m] + "</td>");
+                            $("#measurements").append(ingredients2);
                         }
                     })
                     break;
@@ -81,6 +116,32 @@ $(document).ready(function () {
             }
         })
     }
+    // function fuzzySearch(searchParameter) {
+
+    //     let settings = {
+    //         "async": true,
+    //         "crossDomain": true,
+    //         "url": "https://the-cocktail-db.p.rapidapi.com/filter.php?c=Cocktail",
+    //         "method": "GET",
+    //         "headers": {
+    //             "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+    //             "x-rapidapi-key": "85567027edmsh326c4363be56f0bp123f0bjsn555442865117"
+    //         }
+    //     };
+
+    //     $.ajax(settings).done(function (response) {
+    //         console.log(response)
+    //         var options = {
+    //             keys: ['response.drinks.strDrink'],
+    //         };
+    //         var fuse = new Fuse(response.drinks, options);
+
+    //         var result = fuse.search(searchParameter);
+    //         console.log(result)
+    //     })
+    // }
+
+    // }
     $(document).on("click", "#searchBtn", function (event) {
         event.preventDefault();
         $("#drinkInfo").empty();
@@ -114,7 +175,6 @@ $(document).ready(function () {
                     .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><p class='drinkName'>" + response.drinks[randNum].strDrink + "</p></div>");
                 firstRow.append(randomCard1);
-
             }
             var secondRow = $("<div>")
                 .attr({
