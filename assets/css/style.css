@@ -24,6 +24,7 @@ body {
 }
 .card-title{
     text-align: center;
+    top: 50%;
 }
 .container {
 <<<<<<< HEAD

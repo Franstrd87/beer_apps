@@ -1,5 +1,30 @@
 $(document).ready(function () {
-    function searchCocktail(searchParameter) {
+    
+    function searchGiphy(){
+    let giphy = $(this).attr("id");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=cocktail&limit=4&offset=0&rating=G&lang=en";
+    console.log(giphy);
+    $("#giphy").empty()
+
+    $ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+    });
+};
+
+
+        $(document).on("click",".drinkImg", function(event){
+
+            event.preventDefault();
+            var giphyUp = searchGiphy;
+            append(giphyUp);
+            
+        })
+
+
+        function searchCocktail(searchParameter) {
         let settings = {
             "async": true,
             "crossDomain": true,
@@ -16,15 +41,24 @@ $(document).ready(function () {
                 if (response.drinks[i].strDrink.toLowerCase() == searchParameter.toLowerCase()) {
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
+<<<<<<< HEAD
                     var newDiv = $("<div>")
                         .addClass("card");
                     $(newDiv).append("<div class='card-image  drinkImg'> <img src=" +
+=======
+                    var newDiv1 = $("<div>")
+                        .addClass("col-6")
+                        .append("<div class='card'>");
+                    newDiv1.append("<div class='card-image'> <img src=" +
+>>>>>>> 40d12a5d24fe849ea2286fca78ab6e083e63e966
                         response.drinks[i].strDrinkThumb
-                        + "></div>",
-                        "<div class='card-content' id='drinkRecipe'>");
+                        + " class='drinkImg'></div>");
+                    var newDiv2 = $("<div>")
+                        .addClass("col-6")
+                        .append("<div class='card'><div class='card-text' id='drinkRecipe'>");
                     var newCard = $("<div>")
-                        .addClass("col-12")
-                        .html(newDiv);
+                        .addClass("row")
+                        .append(newDiv1, newDiv2);
                     $("#drinkInfo").html(newCard);
                     $.ajax(settings).done(function (response) {
                         console.log(response)
@@ -83,8 +117,13 @@ $(document).ready(function () {
                 console.log(response.drinks[randNum])
                 var randomCard1 = $("<div>")
                     .addClass("card col-6")
+<<<<<<< HEAD
                     .append("<div class='card-image hinge delay-1s'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+=======
+                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                        + "' class='drinkImg'><p class='drinkName'>" + response.drinks[randNum].strDrink + "</p></div>");
+>>>>>>> 40d12a5d24fe849ea2286fca78ab6e083e63e966
                 firstRow.append(randomCard1);
 
             }
@@ -98,8 +137,13 @@ $(document).ready(function () {
                 console.log(response.drinks[randNum])
                 var randomCard2 = $("<div>")
                     .addClass("card col-6")
+<<<<<<< HEAD
                     .append("<div class='card-image hinge delay-3s'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
+=======
+                    .append("<div class='card-image'><img src='" + response.drinks[randNum].strDrinkThumb
+                        + "' class='drinkImg'><p class='drinkName'>" + response.drinks[randNum].strDrink + "</p></div>");
+>>>>>>> 40d12a5d24fe849ea2286fca78ab6e083e63e966
                 secondRow.append(randomCard2);
             }
             console.log(firstRow)
