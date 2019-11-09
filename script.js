@@ -1,18 +1,16 @@
 $(document).ready(function () {
-    function searchGiphy() {
-        let giphy = $(this).attr("id");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=cocktail&limit=4&offset=0&rating=G&lang=en";
-        console.log(giphy);
-        $("#giphy").empty()
 
-        $ajax({
+    function searchGiphy() {
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=&limit=4&offset=0&rating=G&lang=en";
+        $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
         });
-    };
 
+    };
+    searchGiphy();
     function searchCocktail(newSearch) {
         let settings = {
             "async": true,
@@ -32,7 +30,7 @@ $(document).ready(function () {
                         + response.drinks[i].idDrink;
                     var newDiv1 = $("<div>")
                         .addClass("col-5")
-                        .append("<div class='card'>");
+                        .append("<div style='background-color:#ffc107' class='card'>");
                     newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + " class='drinkImg'></div>");
@@ -77,6 +75,7 @@ $(document).ready(function () {
                     })
                     break;
                 }
+                
                 else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
                     console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
