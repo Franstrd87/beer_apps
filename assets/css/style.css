@@ -10,6 +10,7 @@ body {
     position: absolute;
     left: 550px;
     
+    
  
 }
 .drinkName{
@@ -128,10 +129,17 @@ body {
     max-width:100%;
     cursor: -webkit-grab; cursor: grab;
 }
+.drinkName{
+    position: relative;
+    bottom:90px;
+}
 .card-title{
     text-align: center;
 }
 .container {
+    padding-top: 0;
+    background-color: #d2d3d3bb;
+    margin: 20px; 
     
     
 }

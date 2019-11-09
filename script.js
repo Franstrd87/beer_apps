@@ -1,22 +1,9 @@
 $(document).ready(function () {
-
-    function giphyApi() {
+    function searchGiphy() {
         let giphy = $(this).attr("id");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=cocktail&limit=4&offset=0&rating=G&lang=en";
         console.log(giphy);
         $("#giphy").empty()
-
-
-
-
-        $(document).on("click", ".drinkImg", function (event) {
-
-            event.preventDefault();
-            var giphyUp = searchGiphy;
-            append(giphyUp);
-
-        })
-
 
         $ajax({
             url: queryURL,
@@ -24,9 +11,9 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
         });
-    }
+    };
 
-    function searchCocktail(searchParameter) {
+    function searchCocktail(newSearch) {
         let settings = {
             "async": true,
             "crossDomain": true,
@@ -40,7 +27,7 @@ $(document).ready(function () {
 
         $.ajax(settings).done(function (response) {
             for (let i = 0; i < response.drinks.length; i++) {
-                if (response.drinks[i].strDrink.toLowerCase() == searchParameter.toLowerCase()) {
+                if (response.drinks[i].strDrink.toLowerCase() == newSearch.toLowerCase()) {
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
                     var newDiv1 = $("<div>")
@@ -90,7 +77,7 @@ $(document).ready(function () {
                     })
                     break;
                 }
-                else if (response.drinks[i].strDrink.toLowerCase() !== searchParameter.toLowerCase()) {
+                else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
                     console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
                         .addClass("col-12")
@@ -129,6 +116,12 @@ $(document).ready(function () {
     // }
 
     // }
+    $(document).on("click", ".drinkName", function (event) {
+        event.preventDefault();
+        var drinkSearch = $(this).text();
+        console.log(drinkSearch)
+        searchCocktail(drinkSearch);
+    })
     $(document).on("click", "#searchBtn", function (event) {
         event.preventDefault();
         $("#drinkInfo").empty();
