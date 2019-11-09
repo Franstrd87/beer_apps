@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    function searchGiphy(){
     let giphy = $(this).attr("id");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=cocktail&limit=4&offset=0&rating=G&lang=en";
     console.log(giphy);
@@ -10,6 +12,16 @@ $(document).ready(function () {
     }).then(function(response){
         console.log(response);
     });
+};
+
+
+        $(document).on("click",".drinkImg", function(event){
+
+            event.preventDefault();
+            var giphyUp = searchGiphy;
+            append(giphyUp);
+            
+        })
 
 
         function searchCocktail(searchParameter) {
