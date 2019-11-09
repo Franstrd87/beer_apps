@@ -12,12 +12,16 @@ body {
 .drinkImg{
     max-width:100%;
 }
+.drinkName{
+    position: relative;
+    bottom:90px;
+}
 .card-title{
     text-align: center;
     top: 50%;
 }
 .container {
-    padding-top: ;
+    padding-top: 0;
     background-color: #d2d3d3bb;
     margin: 20px; 
     
