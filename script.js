@@ -143,7 +143,7 @@ $(document).ready(function () {
 
             var firstRow = $("<div>")
                 .attr({
-                    "class": "row",
+                    "class": "row ",
                     "id": "firstRow"
                 });
             for (let k = 0; k < 2; k++) {
