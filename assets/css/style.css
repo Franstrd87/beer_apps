@@ -1,13 +1,23 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-
+.card {
+    background-color: #ffc107; 
+}
+#contactButton{
+    color: #28a745;
+}
 #searchBtn {
     margin-left: 20vw;
     margin-top: 0;
     background-color: #ffc107;
 
 }
+.card-group {
+    background-color: #ffc107;
+    margin-top: 5vw;
+}
+
 
 .drinkImg{
     max-width:100%;
