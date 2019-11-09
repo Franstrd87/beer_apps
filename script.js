@@ -83,7 +83,7 @@ $(document).ready(function () {
                 console.log(response.drinks[randNum])
                 var randomCard1 = $("<div>")
                     .addClass("card col-6")
-                    .append("<div class='card-image hinge delay-3s'><img src='" + response.drinks[randNum].strDrinkThumb
+                    .append("<div class='card-image hinge delay-1s'><img src='" + response.drinks[randNum].strDrinkThumb
                         + "' class='drinkImg'><span class='card-title'>" + response.drinks[randNum].strDrink + "</span></div>");
                 firstRow.append(randomCard1);
 
