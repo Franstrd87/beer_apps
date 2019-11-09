@@ -30,7 +30,7 @@ $(document).ready(function () {
                         + response.drinks[i].idDrink;
                     var newDiv1 = $("<div>")
                         .addClass("col-5")
-                        .append("<div class='card'>");
+                        .append("<div style='background-color:#ffc107' class='card'>");
                     newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + " class='drinkImg'></div>");
@@ -75,6 +75,7 @@ $(document).ready(function () {
                     })
                     break;
                 }
+                
                 else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
                     console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
