@@ -1,12 +1,14 @@
 $(document).ready(function () {
+
     function searchGiphy() {
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=sorry&limit=4&offset=0&rating=G&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=GejTzVgcu0DoFlIQjwSnMjK4TX3eG3c3&q=&limit=4&offset=0&rating=G&lang=en";
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
         });
+
     };
     searchGiphy();
     function searchCocktail(newSearch) {
