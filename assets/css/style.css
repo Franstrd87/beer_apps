@@ -1,7 +1,9 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-
+.card{
+    background-color: #ffc107;
+}
 #searchBtn {
     margin-left: 20vw;
     margin-top: 0;
