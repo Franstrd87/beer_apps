@@ -1,7 +1,6 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-<<<<<<< HEAD
 
 
 #searchBtn {
@@ -10,9 +9,17 @@ body {
     background-color: rgb(238, 110, 115);
     position: absolute;
     left: 550px;
+}
+  
     
     
  
+
+.card-title{
+    font-family: 'Fredoka One', cursive;
+}
+.card-text{
+    font-family: 'Fredoka One', cursive;
 }
 .drinkName{
     position: relative;
@@ -71,18 +78,6 @@ body {
     body {
     background-image: url("../images/cocktail.jpg");
 }
-=======
-.card {
-    background-color: #ffc107; 
-}
-#contactButton{
-    color: #28a745;
-}
-#searchBtn {
-    margin-left: 20vw;
-    margin-top: 0;
-    background-color: #ffc107;
->>>>>>> 682f92b21d0abef004704277b4900c1ebf5e2adb
 
 
 #searchBtn {
@@ -94,7 +89,6 @@ body {
     
  
 }
-<<<<<<< HEAD
 .drinkName{
     position: relative;
     font-family: 'Anton', sans-serif;
@@ -108,11 +102,6 @@ body {
   animation-name: example;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-=======
-.card-group {
-    background-color: #ffc107;
-    margin-top: 5vw;
->>>>>>> 682f92b21d0abef004704277b4900c1ebf5e2adb
 }
 
 
@@ -160,26 +149,6 @@ body {
     padding-top: 0;
     background-color: #d2d3d3bb;
     margin: 20px; 
-<<<<<<< HEAD
-    
-    
-}
-.card-image{
-    border: 2px solid red;
-    border-radius: 8px;
-}
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { 768px }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { 992px }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { 1200px }
-}
-=======
     }
  
     .footer,
@@ -197,7 +166,6 @@ body {
         clear: both;
         margin-left: 0;
       }
->>>>>>> 682f92b21d0abef004704277b4900c1ebf5e2adb
 
 @media screen and (max-width: 768px) {
     
