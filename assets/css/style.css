@@ -1,20 +1,18 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-
-
 #searchBtn {
-    margin-left: 20vw;
-    margin-top: 0;
-    background-color: rgb(238, 110, 115);
-    position: absolute;
-    left: 550px;
+   background-color: #f3a53f;  
 }
-  
-    
+ #contactButton {
+   color: #28a745;
+   position: static;
+ } 
+ .card-group {
+   margin-top: 75px;
+ }   
     
  
-
 .card-title{
     font-family: 'Fredoka One', cursive;
 }
@@ -35,8 +33,6 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-
  .navbar-brand{
     font-family: 'Anton', sans-serif;
     font-size: 2cm; 
@@ -73,22 +69,12 @@ body {
     text-align: center;
 }
 .container {
-    padding-top: 3vw;
-    margin: 5px; 
-    body {
-    background-image: url("../images/cocktail.jpg");
-}
-
-
-#searchBtn {
-    margin-left: 20vw;
-    margin-top: 0;
-    background-color: rgb(238, 110, 115);
-    position: absolute;
-    left: 150px;
+    padding-top: 20vw;
+    margin: 15px; 
+  
     
- 
 }
+
 .drinkName{
     position: relative;
     font-family: 'Anton', sans-serif;
@@ -103,8 +89,6 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-
  .navbar-brand{
     font-family: 'Anton', sans-serif;
     font-size: 2cm; 
@@ -151,38 +135,34 @@ body {
     margin: 20px; 
     }
  
-    .footer,
-    .push {
-      height: 50px;
-    }
-    footer {
-        text-align: center;
-        background-color: #ffc107;
-        border-bottom: 8px solid #f3a53f;
-        margin: 0;
-        position: fixed;
-        bottom: 0%;
-        width: 100%;
-        clear: both;
-        margin-left: 0;
-      }
-
-@media screen and (max-width: 768px) {
+.footer,
+.push {
+   height: 50px;
+}
     
-    img {
-        width: 200px;
-        height: 200px;
-        
-    }
-  }    
-  
-  /* Additional Screen Sizes */
-  
-  /* Width at 640px and below */
-  @media screen and (max-width: 640px) {
-  
-    img {
-        width: 150px;
-        height: 150px;
-    }
-  }
+footer {
+    text-align: center;
+    background-color: #ffc107;
+    border-bottom: 8px solid #f3a53f;
+    margin: 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+      }
+      @media screen and (min-width: 980px) {
+        body {
+          background-color: lightgreen;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        body {
+          background-color: grey;
+        }
+      }
+      @media screen and (min-width: 640px) {
+        body {
+          background-color: brown;
+        }
+      }
