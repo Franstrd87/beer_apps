@@ -10,6 +10,17 @@ body {
     position: absolute;
     left: 550px;
 }
+  
+    
+    
+ 
+
+.card-title{
+    font-family: 'Fredoka One', cursive;
+}
+.card-text{
+    font-family: 'Fredoka One', cursive;
+}
 .drinkName{
     position: relative;
     font-family: 'Anton', sans-serif;
@@ -68,7 +79,7 @@ body {
 .container {
     padding-top: 3vw;
     margin: 5px; 
-    body {
+ {
     background-image: url("../images/cocktail.jpg");
 }
 
@@ -174,7 +185,7 @@ footer {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) { 1200px }
-}
+
 
 @media screen and (max-width: 768px) {
     
