@@ -1,8 +1,6 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-
-
 #searchBtn {
     margin-left: 20vw;
     margin-top: 0;
@@ -14,7 +12,6 @@ body {
     
     
  
-
 .card-title{
     font-family: 'Fredoka One', cursive;
 }
@@ -35,8 +32,6 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-
  .navbar-brand{
     font-family: 'Anton', sans-serif;
     font-size: 2cm; 
@@ -65,10 +60,6 @@ body {
     100% {color:red;} 
   
  }
- #groupPict{
-     
-     margin: 15px;
- }
 .drinkImg{
     max-width:100%;
     cursor: -webkit-grab; cursor: grab;
@@ -79,11 +70,9 @@ body {
 .container {
     padding-top: 3vw;
     margin: 5px; 
- {
+    body {
     background-image: url("../images/cocktail.jpg");
 }
-
-
 #searchBtn {
     margin-left: 20vw;
     margin-top: 0;
@@ -107,8 +96,6 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-
  .navbar-brand{
     font-family: 'Anton', sans-serif;
     font-size: 2cm; 
@@ -153,40 +140,23 @@ body {
     padding-top: 0;
     background-color: #d2d3d3bb;
     margin: 20px; 
-    
-    
-}
-.card-image{
-    border: 2px solid red;
-    border-radius: 8px;
-}
-.footer,
-.push {
-  height: 50px;
-}
-footer {
-    text-align: center;
-    background-color: #2abfff;
-    border-bottom: 8px solid #007bff;
-    margin: 0;
-    position: fixed;
-    bottom: 0%;
-    width: 100%;
-    clear: both;
-    margin-left: 0;
-  }
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { 768px }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { 992px }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { 1200px }
-
-
+    }
+ 
+    .footer,
+    .push {
+      height: 50px;
+    }
+    footer {
+        text-align: center;
+        background-color: #ffc107;
+        border-bottom: 8px solid #f3a53f;
+        margin: 0;
+        position: fixed;
+        bottom: 0%;
+        width: 100%;
+        clear: both;
+        margin-left: 0;
+      }
 @media screen and (max-width: 768px) {
     
     img {
@@ -206,3 +176,4 @@ footer {
         height: 150px;
     }
   }
+  
