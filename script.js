@@ -50,7 +50,7 @@ $(document).ready(function () {
                     //then replacing html content through javascript.
                     var newDiv1 = $("<div>")
                         .addClass("col-5")
-                        .append("<div class='card'>");
+                        .append("<div style='background-color:#ffc107' class='card'>");
                     newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + " class='drinkImg'></div>");
@@ -164,7 +164,7 @@ $(document).ready(function () {
             //and append two cards per for loop into a topr row and a second row
             var firstRow = $("<div>")
                 .attr({
-                    "class": "row",
+                    "class": "row ",
                     "id": "firstRow"
                 });
             for (let k = 0; k < 2; k++) {
