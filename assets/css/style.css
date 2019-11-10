@@ -1,16 +1,125 @@
 body {
     background-image: url("../images/cocktail.jpg");
 }
-
 #searchBtn {
-    margin-left: 20vw;
-    margin-top: 0;
-    background-color: #ffc107;
-
+   background-color: #f3a53f;  
 }
-
+ #contactButton {
+   color: #28a745;
+   position: static;
+ } 
+ .card-group {
+   margin-top: 75px;
+ }   
+    
+ 
+.card-title{
+    font-family: 'Fredoka One', cursive;
+}
+.card-text{
+    font-family: 'Fredoka One', cursive;
+}
+.drinkName{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    font-size: 1cm;
+  cursor: pointer;
+  
+  background-color: white;
+  position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+ .navbar-brand{
+    font-family: 'Anton', sans-serif;
+    font-size: 2cm; 
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    0%   {color:red;}
+    80%  {color:yellow;}
+    80%  {color:blue;}
+    80%  {color:green;}
+    100% {color:red;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    0%   {color:red;}
+    80%  {color:yellow;} 
+    80%  {color:blue;} 
+    80%  {color:green;} 
+    100% {color:red;} 
+  
+ }
 .drinkImg{
     max-width:100%;
+    cursor: -webkit-grab; cursor: grab;
+}
+.card-title{
+    text-align: center;
+}
+.container {
+    padding-top: 20vw;
+    margin: 15px; 
+  
+    
+}
+
+.drinkName{
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    font-size: 1cm;
+  cursor: pointer;
+  
+  background-color: white;
+  position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+ .navbar-brand{
+    font-family: 'Anton', sans-serif;
+    font-size: 2cm; 
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    0%   {color:red;}
+    80%  {color:yellow;}
+    80%  {color:blue;}
+    80%  {color:green;}
+    100% {color:red;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    0%   {color:red;}
+    80%  {color:yellow;} 
+    80%  {color:blue;} 
+    80%  {color:green;} 
+    100% {color:red;} 
+  
+ }
+.drinkImg{
+    max-width:100%;
+    cursor: -webkit-grab; cursor: grab;
 }
 .drinkName{
     position: relative;
@@ -19,7 +128,6 @@ body {
 }
 .card-title{
     text-align: center;
-    top: 50%;
 }
 .container {
     padding-top: 0;
@@ -27,38 +135,34 @@ body {
     margin: 20px; 
     }
  
-    .footer,
-    .push {
-      height: 50px;
-    }
-    footer {
-        text-align: center;
-        background-color: #ffc107;
-        border-bottom: 8px solid #f3a53f;
-        margin: 0;
-        position: fixed;
-        bottom: 0%;
-        width: 100%;
-        clear: both;
-        margin-left: 0;
-      }
-
-@media screen and (max-width: 768px) {
+.footer,
+.push {
+   height: 50px;
+}
     
-    img {
-        width: 200px;
-        height: 200px;
-        
-    }
-  }    
-  
-  /* Additional Screen Sizes */
-  
-  /* Width at 640px and below */
-  @media screen and (max-width: 640px) {
-  
-    img {
-        width: 150px;
-        height: 150px;
-    }
-  }
+footer {
+    text-align: center;
+    background-color: #ffc107;
+    border-bottom: 8px solid #f3a53f;
+    margin: 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+      }
+      @media screen and (min-width: 980px) {
+        body {
+          background-color: lightgreen;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        body {
+          background-color: grey;
+        }
+      }
+      @media screen and (min-width: 640px) {
+        body {
+          background-color: brown;
+        }
+      }

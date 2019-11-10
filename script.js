@@ -50,7 +50,7 @@ $(document).ready(function () {
                     //then replacing html content through javascript.
                     var newDiv1 = $("<div>")
                         .addClass("col-5")
-                        .append("<div class='card'>");
+                        .append("<div style='background-color:#ffc107' class='card'>");
                     newDiv1.append("<div class='card-image'> <img src=" +
                         response.drinks[i].strDrinkThumb
                         + " class='drinkImg'></div>");
@@ -97,7 +97,21 @@ $(document).ready(function () {
                         }
                     })
                     break;
+<<<<<<< HEAD
 
+=======
+                }
+                
+                else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
+                    console.log(response.drinks[i].strDrink.toLowerCase())
+                    var errorCard = $("<div>")
+                        .addClass("col-12")
+                        .html(newError);
+                    var newError = $("<div>")
+                        .addClass("card")
+                        .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
+                    $("#drinkInfo").html(errorCard);
+>>>>>>> a000b9c5021e5afaf049fbee906a0f0431db4e17
                 }
             }
         })
@@ -164,7 +178,7 @@ $(document).ready(function () {
             //and append two cards per for loop into a topr row and a second row
             var firstRow = $("<div>")
                 .attr({
-                    "class": "row",
+                    "class": "row ",
                     "id": "firstRow"
                 });
             for (let k = 0; k < 2; k++) {
