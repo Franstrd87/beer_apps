@@ -142,20 +142,21 @@ body {
     margin: 20px; 
     }
  
-    .footer,
-    .push {
-      height: 50px;
-    }
-    footer {
-        text-align: center;
-        background-color: #ffc107;
-        border-bottom: 8px solid #f3a53f;
-        margin: 0;
-        position: fixed;
-        bottom: 0%;
-        width: 100%;
-        clear: both;
-        margin-left: 0;
+.footer,
+.push {
+   height: 50px;
+}
+    
+footer {
+    text-align: center;
+    background-color: #ffc107;
+    border-bottom: 8px solid #f3a53f;
+    margin: 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    clear: both;
+    margin-left: 0;
       }
 @media screen and (max-width: 768px) {
     
