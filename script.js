@@ -97,13 +97,10 @@ $(document).ready(function () {
                         }
                     })
                     break;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
                 }
-                
-                else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
+
+                if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
                     console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
                         .addClass("col-12")
@@ -112,10 +109,6 @@ $(document).ready(function () {
                         .addClass("card")
                         .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
                     $("#drinkInfo").html(errorCard);
->>>>>>> a000b9c5021e5afaf049fbee906a0f0431db4e17
-=======
-
->>>>>>> 0fbdf9121c03e4006eca0a24e4ed2a74d681c215
                 }
             }
         })
