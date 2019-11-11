@@ -99,8 +99,8 @@ $(document).ready(function () {
                     break;
 
                 }
-                
-                else if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
+
+                if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
                     console.log(response.drinks[i].strDrink.toLowerCase())
                     var errorCard = $("<div>")
                         .addClass("col-12")
@@ -109,7 +109,10 @@ $(document).ready(function () {
                         .addClass("card")
                         .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
                     $("#drinkInfo").html(errorCard);
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa167d9797c6fbc3dd5f1e2b652772760edd9338
                 }
             }
         })
