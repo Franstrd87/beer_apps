@@ -109,6 +109,10 @@ $(document).ready(function () {
                         .addClass("card")
                         .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
                     $("#drinkInfo").html(errorCard);
+<<<<<<< HEAD
+
+=======
+>>>>>>> fa167d9797c6fbc3dd5f1e2b652772760edd9338
                 }
             }
         })
