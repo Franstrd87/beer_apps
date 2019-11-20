@@ -7,12 +7,14 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            var errorGif = $("<div>")
-                .attr("style", "background-image:url('" + response.data[0].url + "')");
-            $(errorCard).append(errorGif);
+            console.log(response)
+            var errorGif = $("<img>")
+                .attr("src", response.data[0].images.downsized.url);
+            $("#drinkInfo").append(errorGif);
+            console.log(errorGif)
         });
     }
-    searchGiphy();
+
     //this variable will be used for an error statement
     //searchCocktail returns the appropriate drink using our Cocktail DB as a setting. 
     //this is a different syntax from what we were taught.
@@ -41,9 +43,9 @@ $(document).ready(function () {
                         .addClass("card")
                         .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
                     $("#drinkInfo").html(errorCard);
+                    searchGiphy();
                 }
                 else {
-
                     settings.url = "https://the-cocktail-db.p.rapidapi.com/lookup.php?i="
                         + response.drinks[i].idDrink;
                     //creating a card, appending an image into it, and creatign a table for the drink ingredients.
@@ -97,18 +99,6 @@ $(document).ready(function () {
                         }
                     })
                     break;
-
-                }
-
-                if (response.drinks[i].strDrink.toLowerCase() !== newSearch.toLowerCase()) {
-                    console.log(response.drinks[i].strDrink.toLowerCase())
-                    var errorCard = $("<div>")
-                        .addClass("col-12")
-                        .html(newError);
-                    var newError = $("<div>")
-                        .addClass("card")
-                        .append("<div class='card-content' id='errorMessage'><h1>Sorry, not in our database:(<h1></div>");
-                    $("#drinkInfo").html(errorCard);
                 }
             }
         })
